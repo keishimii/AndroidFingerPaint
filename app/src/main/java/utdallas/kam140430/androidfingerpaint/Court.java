@@ -23,7 +23,7 @@ public class Court extends View {
         int y = context.getResources().getDisplayMetrics().heightPixels - width;
 
         mDrawable = new ShapeDrawable(new RectShape());
-        mDrawable.getPaint().setColor(Color.BLUE);
+        mDrawable.getPaint().setColor(Color.LTGRAY);
         mDrawable.setBounds(x, y, width, height);
 
     }

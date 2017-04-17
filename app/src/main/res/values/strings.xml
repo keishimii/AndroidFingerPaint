@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidFingerPaint</string>
+    <string name="label_red_button">Red</string>
+    <string name="label_green_button">Green</string>
+    <string name="label_blue_button">Blue</string>
+    <string name="label_black_button">Black</string>
 </resources>
