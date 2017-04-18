@@ -20,42 +20,41 @@
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="8dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="1" >
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1" >
 
-            <RadioButton
-                android:id="@+id/redRadioButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                android:text="@string/label_red_button" />
+                <RadioButton
+                    android:id="@+id/redRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:text="@string/label_red_button" />
 
-            <RadioButton
-                android:id="@+id/greenRadioButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                android:text="@string/label_green_button" />
+                <RadioButton
+                    android:id="@+id/greenRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:text="@string/label_green_button" />
 
-            <RadioButton
-                android:id="@+id/blueRadioButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                android:text="@string/label_blue_button" />
+                <RadioButton
+                    android:id="@+id/blueRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:text="@string/label_blue_button" />
 
-            <RadioButton
-                android:id="@+id/blackRadioButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                android:text="@string/label_black_button" />
+                <RadioButton
+                    android:id="@+id/blackRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:text="@string/label_black_button" />
 
-
-        </LinearLayout>
+            </RadioGroup>
 
         <SeekBar
             android:layout_width="match_parent"
