@@ -2,6 +2,7 @@ package utdallas.kam140430.androidfingerpaint;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
 import android.graphics.Bitmap;
@@ -35,14 +36,15 @@ public class Court extends View {
         canvasBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         drawCanvas = new Canvas(canvasBitmap);
 
-        drawPaint = new Paint(paintColor);
+        drawPaint = new Paint();
+        drawPaint.setColor(Color.BLACK);
         drawPaint.setAntiAlias(true);
         drawPaint.setStrokeWidth(20);
         drawPaint.setStyle(Paint.Style.STROKE);
         drawPaint.setStrokeJoin(Paint.Join.ROUND);
         drawPaint.setStrokeCap(Paint.Cap.ROUND);
 
-        canvasPaint = new Paint(paintColor);
+        canvasPaint = new Paint();
         drawPath = new Path();
     }
 
@@ -74,6 +76,11 @@ public class Court extends View {
 
         invalidate();
         return true;
+    }
+
+    // Used to change color of the paint brush
+    public void changePaint(int color){
+        drawPaint.setColor(color);
     }
 
 }

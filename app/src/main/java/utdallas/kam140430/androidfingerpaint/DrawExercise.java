@@ -21,17 +21,16 @@ public class DrawExercise extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.redRadioButton:
-                        paintCourt.paintColor = Color.RED;
+                        paintCourt.changePaint(Color.RED);
                         break;
                     case R.id.greenRadioButton:
-                        paintCourt.paintColor = Color.GREEN;
-
+                        paintCourt.changePaint(Color.GREEN);
                         break;
                     case R.id.blueRadioButton:
-                        paintCourt.paintColor = Color.BLUE;
+                        paintCourt.changePaint(Color.BLUE);
                         break;
                     case R.id.blackRadioButton:
-                        paintCourt.paintColor = Color.BLACK;
+                        paintCourt.changePaint(Color.BLACK);
                         break;
                 }
             }
