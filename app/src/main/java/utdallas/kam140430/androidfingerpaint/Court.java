@@ -16,12 +16,12 @@ import android.view.MotionEvent;
 
 public class Court extends View {
 
-    //paint colors
-    public int paintColor;
     //drawing path
     private Path drawPath;
-    //drawing and canvas paint
-    private Paint drawPaint, canvasPaint;
+    //paint for brush
+    private Paint brushPaint;
+    //paint for canvas
+    private Paint canvasPaint;
     //canvas
     private Canvas drawCanvas;
     //canvas bitmap
@@ -36,13 +36,12 @@ public class Court extends View {
         canvasBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         drawCanvas = new Canvas(canvasBitmap);
 
-        drawPaint = new Paint();
-        drawPaint.setColor(Color.BLACK);
-        drawPaint.setAntiAlias(true);
-        drawPaint.setStrokeWidth(20);
-        drawPaint.setStyle(Paint.Style.STROKE);
-        drawPaint.setStrokeJoin(Paint.Join.ROUND);
-        drawPaint.setStrokeCap(Paint.Cap.ROUND);
+        brushPaint = new Paint();
+        brushPaint.setAntiAlias(true);
+        brushPaint.setStrokeWidth(3);
+        brushPaint.setStyle(Paint.Style.STROKE);
+        brushPaint.setStrokeJoin(Paint.Join.ROUND);
+        brushPaint.setStrokeCap(Paint.Cap.ROUND);
 
         canvasPaint = new Paint();
         drawPath = new Path();
@@ -51,7 +50,7 @@ public class Court extends View {
     @Override
     public void onDraw(Canvas canvas){
         canvas.drawBitmap(canvasBitmap, 0, 0, canvasPaint);
-        canvas.drawPath(drawPath, drawPaint);
+        canvas.drawPath(drawPath, brushPaint);
     }
 
     @Override
@@ -67,7 +66,7 @@ public class Court extends View {
                 drawPath.lineTo(touchX, touchY);
                 break;
             case MotionEvent.ACTION_UP:
-                drawCanvas.drawPath(drawPath, drawPaint);
+                drawCanvas.drawPath(drawPath, brushPaint);
                 drawPath.reset();
                 break;
             default:
@@ -79,8 +78,13 @@ public class Court extends View {
     }
 
     // Used to change color of the paint brush
-    public void changePaint(int color){
-        drawPaint.setColor(color);
+    public void changePaintColor(int color){
+        brushPaint.setColor(color);
+    }
+
+    // Used to change the size of the paint brush
+    public void changeBrushSize(float size){
+        brushPaint.setStrokeWidth(size);
     }
 
 }

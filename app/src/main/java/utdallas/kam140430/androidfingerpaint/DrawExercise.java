@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
 
 public class DrawExercise extends AppCompatActivity {
 
@@ -21,23 +22,49 @@ public class DrawExercise extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.redRadioButton:
-                        paintCourt.changePaint(Color.RED);
+                        paintCourt.changePaintColor(Color.RED);
                         break;
                     case R.id.greenRadioButton:
-                        paintCourt.changePaint(Color.GREEN);
+                        paintCourt.changePaintColor(Color.GREEN);
                         break;
                     case R.id.blueRadioButton:
-                        paintCourt.changePaint(Color.BLUE);
+                        paintCourt.changePaintColor(Color.BLUE);
                         break;
                     case R.id.blackRadioButton:
-                        paintCourt.changePaint(Color.BLACK);
+                        paintCourt.changePaintColor(Color.BLACK);
                         break;
                 }
             }
         });
 
-        //intially setting red paint
+        //initially setting red paint
         colorSwitches.check(R.id.redRadioButton);
+
+        //constraints for brush size
+        final int step = 1;
+        final int max = (this.getResources().getDisplayMetrics().widthPixels) /4 ;
+        final int min = 3;
+
+        //Brush size toggle
+        SeekBar brushSizeToggle = (SeekBar) findViewById(R.id.brush_toggle);
+        brushSizeToggle.setMax((max - min) / step);
+        brushSizeToggle.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                float size = min + (progress * step);
+                paintCourt.changeBrushSize(size);
+            }
+        });
     }
 
 }
