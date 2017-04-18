@@ -9,6 +9,7 @@ import android.widget.SeekBar;
 public class DrawExercise extends AppCompatActivity {
 
     public Court paintCourt;
+    private final int customGreen = Color.parseColor("#27C327");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class DrawExercise extends AppCompatActivity {
                         paintCourt.changePaintColor(Color.RED);
                         break;
                     case R.id.greenRadioButton:
-                        paintCourt.changePaintColor(Color.GREEN);
+                        paintCourt.changePaintColor(customGreen);
                         break;
                     case R.id.blueRadioButton:
                         paintCourt.changePaintColor(Color.BLUE);

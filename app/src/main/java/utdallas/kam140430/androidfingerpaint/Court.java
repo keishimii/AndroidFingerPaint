@@ -38,7 +38,6 @@ public class Court extends View {
 
         brushPaint = new Paint();
         brushPaint.setAntiAlias(true);
-        brushPaint.setStrokeWidth(3);
         brushPaint.setStyle(Paint.Style.STROKE);
         brushPaint.setStrokeJoin(Paint.Join.ROUND);
         brushPaint.setStrokeCap(Paint.Cap.ROUND);
