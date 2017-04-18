@@ -20,16 +20,17 @@ public class Court extends View {
         int width = context.getResources().getDisplayMetrics().widthPixels;
         int height = context.getResources().getDisplayMetrics().heightPixels;
         int x = 0;
-        int y = context.getResources().getDisplayMetrics().heightPixels - width;
+        int y = 0;
 
         mDrawable = new ShapeDrawable(new RectShape());
         mDrawable.getPaint().setColor(Color.LTGRAY);
         mDrawable.setBounds(x, y, width, height);
-
     }
 
     @Override
     protected void onDraw(Canvas canvas){
+
         mDrawable.draw(canvas);
+
     }
 }

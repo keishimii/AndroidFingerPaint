@@ -7,59 +7,66 @@
     tools:context="utdallas.kam140430.androidfingerpaint.DrawExercise">
 
 
-    <utdallas.kam140430.androidfingerpaint.Court
-        android:layout_width="0dp"
-        android:layout_height="495dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp" />
-
-    <LinearLayout
-        android:layout_width="368dp"
+    <RelativeLayout
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp">
+        android:layout_width="wrap_content" >
 
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:weightSum="1" >
-
-                <RadioButton
-                    android:id="@+id/redRadioButton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.25"
-                    android:text="@string/label_red_button" />
-
-                <RadioButton
-                    android:id="@+id/greenRadioButton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.25"
-                    android:text="@string/label_green_button" />
-
-                <RadioButton
-                    android:id="@+id/blueRadioButton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.25"
-                    android:text="@string/label_blue_button" />
-
-                <RadioButton
-                    android:id="@+id/blackRadioButton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.25"
-                    android:text="@string/label_black_button" />
-
-            </RadioGroup>
-
-        <SeekBar
+        <LinearLayout
+            android:id="@+id/control_layout"
             android:layout_width="match_parent"
-            android:layout_height="40dp" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    </LinearLayout>
+                <RadioGroup
+                    android:id="@+id/color_button_switches"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1" >
+
+                    <RadioButton
+                        android:id="@+id/redRadioButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:text="@string/label_red_button" />
+
+                    <RadioButton
+                        android:id="@+id/greenRadioButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:text="@string/label_green_button" />
+
+                    <RadioButton
+                        android:id="@+id/blueRadioButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:text="@string/label_blue_button" />
+
+                    <RadioButton
+                        android:id="@+id/blackRadioButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:text="@string/label_black_button" />
+
+                </RadioGroup>
+
+            <SeekBar
+                android:id="@+id/brush_toggle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"/>
+
+        </LinearLayout>
+
+
+        <utdallas.kam140430.androidfingerpaint.Court
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/control_layout" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
